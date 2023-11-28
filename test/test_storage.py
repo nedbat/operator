@@ -391,7 +391,7 @@ class TestJujuStateBackend(BaseTestCase):
         t = tempfile.NamedTemporaryFile()
         try:
             fake_script(self, 'state-set', dedent("""
-                cat >> {}
+                /bin/cat >> {}
                 """).format(pathlib.Path(t.name).as_posix()))
             backend = ops.storage._JujuStorageBackend()
             backend.set('key', {'foo': 2})
@@ -422,7 +422,7 @@ class TestJujuStateBackend(BaseTestCase):
         t = tempfile.NamedTemporaryFile()
         try:
             fake_script(self, 'state-set', dedent("""
-                cat >> {}
+                /bin/cat >> {}
                 """).format(pathlib.Path(t.name).as_posix()))
             backend = ops.storage._JujuStorageBackend()
             complex_val = {

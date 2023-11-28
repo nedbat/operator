@@ -1,9 +1,9 @@
 # Testing tools configuration
 [tool.coverage.run]
-branch = true
+branch = false
 
 [tool.coverage.report]
-show_missing = true
+show_missing = false
 
 # Formatting tools configuration
 [tool.autopep8]

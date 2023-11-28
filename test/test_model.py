@@ -2423,7 +2423,7 @@ class TestModelBackend(unittest.TestCase):
                 t = tempfile.NamedTemporaryFile()
                 try:
                     fake_script(self, 'relation-set', dedent("""
-                        cat >> {}
+                        /bin/cat >> {}
                         """).format(pathlib.Path(t.name).as_posix()))
                     os.environ['JUJU_VERSION'] = v
                     self.backend.relation_set(1, 'foo', 'bar', is_app=True)
